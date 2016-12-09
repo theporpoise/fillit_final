@@ -22,8 +22,9 @@ void	print_error(void)
 
 int		main(int argc, char **argv)
 {
-int		pieces[26];
-int		open_msg;
+	int		pieces[26];
+	int		open_msg;
+	
 	
 	if (argc != 2 || (!(open_msg = open(argv[1], O_RDONLY))))
 	{

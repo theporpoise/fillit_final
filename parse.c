@@ -12,31 +12,9 @@
 
 #include <unistd.h>
 #include <stdio.h>
-#include <piece_types.h>
+#include <fillit.h>
 
 #define BUFF_SIZE 100
-
-void	print_piece(const _Bool piece[4][4])
-{
-	int i;
-	int j;
-
-	i = 0;
-	while (i < 4)
-	{
-		j = 0;
-		while (j < 4)
-		{
-			if (piece[i][j])
-				printf("#");
-			else
-				printf(".");
-			j++;
-		}
-		printf("\n");
-		i++;
-	}
-}
 
 //void	piece_compare(const _Bool p1[4][4], const _Bool p2[4][4])
 
@@ -53,7 +31,8 @@ void	init_pieces(int *pieces, int open_msg)
 	i = 0;
 	while (i < 19)
 	{
-		print_piece(piece_types[i]);
+		//print_piece(piece_types[i]);
+		print_piece_of_type(i);
 		printf("\n");
 		i++;
 	}
