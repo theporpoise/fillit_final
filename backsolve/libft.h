@@ -6,7 +6,7 @@
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 11:38:24 by mgould            #+#    #+#             */
-/*   Updated: 2016/12/08 21:27:00 by mgould           ###   ########.fr       */
+/*   Updated: 2016/12/09 10:11:28 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_H
 # include <string.h>
 
-extern const char	*minos[];
+extern const char	*g_minos[];
 typedef struct		s_list
 {
 	void			*content;

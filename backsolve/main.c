@@ -6,7 +6,7 @@
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 08:01:10 by mgould            #+#    #+#             */
-/*   Updated: 2016/12/09 09:41:02 by mgould           ###   ########.fr       */
+/*   Updated: 2016/12/09 10:24:23 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,32 @@ char *get_input_string(char *av)
 	return (string);
 }
 
+int	string_not_val(char *string)
+{
+	int len;
+	int i;
+
+	i = 0;
+	len = ft_strlen(string);
+	printf("string len:\n%d\n", len);
+	if (len <  20)
+	{
+		return (1);
+	}
+	else if (len == 20)
+		while(g_minos[i])
+		{
+			if (!(ft_strncmp(g_minos[i], string, 20)))
+			{
+				printf("matched %d tetros", i);
+				return (0);
+			}
+			i++;
+		}
+		//strncmp with list of tetros
+		//for last one, strncmp -1
+	return (1);
+}
 
 int	main(int ac, char **av)
 {
@@ -85,6 +111,11 @@ int	main(int ac, char **av)
 		return (0);
 	}
 	printf("string is:\n%s", string);
+	if (string_not_val(string))
+	{
+		printf("wrong format\n");
+		return (0);
+	}
 
 
 
