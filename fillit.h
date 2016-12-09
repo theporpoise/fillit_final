@@ -31,6 +31,8 @@ _Bool					get_ps(int piece, int side, int x, int y);
 
 /*
 ** global_init.c
+** g_piece_sides_key: [type][side][x][y]
+**     side 0 is top, 1 is right, 2 is bottom, and 3 is left
 */
 # define P_TYPE_CNT 19
 extern _Bool			g_piece_sides[P_TYPE_CNT][4][4][4];
@@ -41,5 +43,6 @@ extern const _Bool		g_piece_types[P_TYPE_CNT][4][4];
 */
 void					print_piece_of_type(int type);
 void					print_piece(const _Bool piece[4][4]);
+void					print_type_sides(int type);
 
 #endif

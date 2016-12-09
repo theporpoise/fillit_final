@@ -32,7 +32,18 @@ int		main(int argc, char **argv)
 	}
 	init_sides();
 	input_parse(input, open_msg);
-	
+	/*
+	int i;
+	i = 0;
+	while (i < 19)
+	{
+		//print_piece(piece_types[i]);
+		print_piece_of_type(i);
+		printf("\n");
+		i++;
+	}
+	*/
+	print_type_sides(1);
 	return (0);	
 }
 

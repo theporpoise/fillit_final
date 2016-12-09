@@ -44,3 +44,19 @@ void	print_piece(const _Bool piece[4][4])
 		i++;
 	}
 }
+
+void	print_type_sides(int type)
+{
+	printf("\n");
+	printf("   sides for type: %d\n", type);
+	printf("\n");
+	print_piece(g_piece_sides[type][0]);
+	printf("\n");
+	print_piece(g_piece_sides[type][1]);
+	printf("\n");
+	print_piece(g_piece_sides[type][2]);
+	printf("\n");
+	print_piece(g_piece_sides[type][3]);
+	printf("\n");
+	printf("\n");
+}

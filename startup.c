@@ -20,12 +20,12 @@ static void		piece_side_init(int side, int off_x, int off_y)
 	unsigned int	y;
 
 	i = 0;
-	x = 0;
-	y = 0;
 	while (i < P_TYPE_CNT)
 	{
+		x = 0;
 		while (x < 4)
 		{
+			y = 0;
 			while (y < 4)
 			{
 				if (get_pp(i, x, y) && !get_pp(i, x + off_x, y + off_y))
@@ -43,8 +43,7 @@ static void		piece_side_init(int side, int off_x, int off_y)
 void			init_sides(void)
 {
 	piece_side_init(0, -1, 0);
-	printf("\n");
-	print_piece(g_piece_sides[0][0]);
-	printf("\n");
-	printf("\n");
+	piece_side_init(1, 0, 1);
+	piece_side_init(2, 1, 0);
+	piece_side_init(3, 0, -1);
 }

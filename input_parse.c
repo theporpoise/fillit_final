@@ -27,13 +27,4 @@ void	input_parse(int *pieces, int open_msg)
 	read_msg = read(open_msg, buff, BUFF_SIZE);
 	buff[read_msg] = '\0';
 	//printf("%s", buff);
-	int i;
-	i = 0;
-	while (i < 19)
-	{
-		//print_piece(piece_types[i]);
-		print_piece_of_type(i);
-		printf("\n");
-		i++;
-	}
 }
