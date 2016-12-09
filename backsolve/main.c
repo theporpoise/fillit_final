@@ -6,7 +6,7 @@
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 08:01:10 by mgould            #+#    #+#             */
-/*   Updated: 2016/12/09 10:24:23 by mgould           ###   ########.fr       */
+/*   Updated: 2016/12/09 11:56:00 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,31 +69,98 @@ char *get_input_string(char *av)
 	return (string);
 }
 
+int	invalid_chars(char *s)
+{
+	int i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (!(s[i] == '#' || s[i] == '.' || s[i] == '\n'))
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+int	good_len(int len)
+{
+	if (len == 20)
+		return (1);
+	else if (((len - 20) % 21) == 0)
+		return (1);
+	else
+		return(0);
+}
+
 int	string_not_val(char *string)
 {
 	int len;
 	int i;
+	int num;
+	int flag;
 
 	i = 0;
+	flag = 0;
 	len = ft_strlen(string);
-	printf("string len:\n%d\n", len);
-	if (len <  20)
+	num = ((len + 1) / 21);
+	printf("len: %d\nnum: %d\n", len, num);
+	if (!(good_len(len)))
 	{
+		printf("worng length\n");
 		return (1);
 	}
-	else if (len == 20)
-		while(g_minos[i])
+	else if (invalid_chars(string))
+	{
+		printf("invalid chars in string\n");
+		return (1);
+	}
+
+	while (*string)
+	{
+		i = 0;
+		printf("strlen:%zu\n", ft_strlen(string));
+		if (ft_strlen(string) == 20)
 		{
-			if (!(ft_strncmp(g_minos[i], string, 20)))
+			while(g_minos[i])
 			{
-				printf("matched %d tetros", i);
-				return (0);
+				if (!(ft_strncmp(g_minos[i], string, 20)))
+				{
+					printf("last tetros matched %d tetros\n", i);
+					flag = 1;
+					break;
+				}
+				i++;
 			}
-			i++;
+			if (!(flag))
+			{
+				printf("didn't match anything on last one");
+				return (1);
+			}
 		}
-		//strncmp with list of tetros
-		//for last one, strncmp -1
-	return (1);
+		else
+		{
+			while(g_minos[i])
+			{
+				if (!(ft_strncmp(g_minos[i], string, 21)))
+				{
+					printf("%d tetros matched %d tetros\n", num, i);
+					flag = 1;
+					break;
+				}
+				i++;
+			}
+			if (!(flag))
+			{
+				printf("didn't match anything on num:%d, i:%d", num, i);
+				return (1);
+			}
+		}
+		num--;
+		string += 21;
+	}
+
+	return (0);
 }
 
 int	main(int ac, char **av)
