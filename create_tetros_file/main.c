@@ -57,7 +57,7 @@ int	main(int ac, char **av)
 	int rando;
 	char **lmino;
 
-	fd = open("tetriminos_file", O_RDWR | O_CREAT | O_TRUNC , 0666);
+	fd = open("tetros", O_RDWR | O_CREAT | O_TRUNC , 0666);
 	if (!fd)
 	{
 		printf("error opening file");
