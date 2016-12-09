@@ -44,6 +44,5 @@ int		main(int argc, char **argv)
 	}
 	*/
 	print_type_sides(1);
-	return (0);	
+	return (0);
 }
-

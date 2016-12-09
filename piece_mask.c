@@ -13,8 +13,9 @@
 #include <fillit.h>
 
 /*
-** gets piece part and returns no part when out of bounds	
+** gets piece part and returns no part when out of bounds
 */
+
 _Bool	get_pp(int piece, int x, int y)
 {
 	if (x > 3 || x < 0 || y > 3 || y < 0)
@@ -26,10 +27,10 @@ _Bool	get_pp(int piece, int x, int y)
 ** same as get_pp but for sides
 ** side 0 is top, 1 is right, 2 is bottom, and 3 is left
 */
+
 _Bool	get_ps(int piece, int side, int x, int y)
 {
 	if (x > 3 || x < 0 || y > 3 || y < 0 || side < 0 || side > 3)
 		return (0);
 	return (g_piece_sides[piece][side][x][y]);
 }
-
