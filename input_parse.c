@@ -18,7 +18,7 @@
 
 //void	piece_compare(const _Bool p1[4][4], const _Bool p2[4][4])
 
-void	init_pieces(int *pieces, int open_msg)
+void	input_parse(int *pieces, int open_msg)
 {
 	char		buff[BUFF_SIZE + 1];
 	int			read_msg;

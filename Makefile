@@ -5,7 +5,8 @@ OBJS = \
 	\
 	fillit.o\
 	global_init.o\
-	parse.o\
+	input_parse.o\
+	piece_mask.o\
 	startup.o
 
 

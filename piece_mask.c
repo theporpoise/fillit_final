@@ -5,46 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/08 18:36:19 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/08 18:36:21 by mburson          ###   ########.fr       */
+/*   Created: 2016/12/08 17:20:32 by mburson           #+#    #+#             */
+/*   Updated: 2016/12/08 17:20:34 by mburson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fillit.h>
-#include <stdio.h>
 
-static void		piece_side_init(int side, int off_x, int off_y)
+/*
+** gets piece part and returns no part when out of bounds	
+*/
+_Bool	get_pp(int piece, int x, int y)
 {
-	unsigned int	i;
-	unsigned int	x;
-	unsigned int	y;
-
-	i = 0;
-	x = 0;
-	y = 0;
-	while (i < P_TYPE_CNT)
-	{
-		while (x < 4)
-		{
-			while (y < 4)
-			{
-				if (get_pp(i, x, y) && !get_pp(i, x + off_x, y + off_y))
-					g_piece_sides[i][side][x][y] = 1;
-				else
-					g_piece_sides[i][side][x][y] = 0;
-				y++;
-			}
-			x++;
-		}
-		i++;
-	}
+	if (x > 3 || x < 0 || y > 3 || y < 0)
+		return (0);
+	return (g_piece_types[piece][x][y]);
 }
 
-void			init_sides(void)
+/*
+** same as get_pp but for sides
+** side 0 is top, 1 is right, 2 is bottom, and 3 is left
+*/
+_Bool	get_ps(int piece, int side, int x, int y)
 {
-	piece_side_init(0, -1, 0);
-	printf("\n");
-	print_piece(g_piece_sides[0][0]);
-	printf("\n");
-	printf("\n");
+	if (x > 3 || x < 0 || y > 3 || y < 0 || side < 0 || side > 3)
+		return (0);
+	return (g_piece_sides[piece][side][x][y]);
 }
+

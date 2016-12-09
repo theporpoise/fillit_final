@@ -22,17 +22,16 @@ void	print_error(void)
 
 int		main(int argc, char **argv)
 {
-	int		pieces[26];
+	int		input[26];
 	int		open_msg;
-	
-	
+
 	if (argc != 2 || (!(open_msg = open(argv[1], O_RDONLY))))
 	{
 		print_error();
 		return (0);
 	}
-
-	init_pieces(pieces, open_msg);
+	init_sides();
+	input_parse(input, open_msg);
 	
 	return (0);	
 }
