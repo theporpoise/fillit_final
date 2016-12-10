@@ -6,11 +6,11 @@
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 18:36:19 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/08 18:36:21 by mburson          ###   ########.fr       */
+/*   Updated: 2016/12/10 12:09:29 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fillit.h>
+#include "fillit.h"
 
 static void		init_piece(int piece)
 {

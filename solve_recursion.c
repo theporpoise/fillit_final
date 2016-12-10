@@ -6,12 +6,12 @@
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 20:34:36 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/10 11:42:26 by mgould           ###   ########.fr       */
+/*   Updated: 2016/12/10 12:10:14 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <fillit.h>
+#include "fillit.h"
 
 static _Bool	does_fit(char **map, int piece, int x, int y)
 {

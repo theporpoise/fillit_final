@@ -6,7 +6,7 @@
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/07 19:33:26 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/10 10:00:14 by mgould           ###   ########.fr       */
+/*   Updated: 2016/12/10 12:18:55 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FILLIT_H
 
 # include <string.h>
+# include "./libft/libft.h"
 
 # define MAX_INPUT_SIZE 26
 

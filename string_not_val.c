@@ -6,7 +6,7 @@
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/10 09:50:35 by mgould            #+#    #+#             */
-/*   Updated: 2016/12/10 11:03:51 by mgould           ###   ########.fr       */
+/*   Updated: 2016/12/10 12:10:27 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/uio.h>
-#include <libft.h>
-#include <fillit.h>
+#include "fillit.h"
 
 int	invalid_chars(char *s)
 {

@@ -6,7 +6,7 @@
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/10 09:46:02 by mgould            #+#    #+#             */
-/*   Updated: 2016/12/10 10:11:05 by mgould           ###   ########.fr       */
+/*   Updated: 2016/12/10 12:09:42 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/uio.h>
-#include <libft.h>
-#include <fillit.h>
+#include "fillit.h"
 
 char	*get_input_string(char *av)
 {

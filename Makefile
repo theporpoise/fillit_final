@@ -1,8 +1,10 @@
 NAME = fillit
 
+LIBRARY = libft
+
+LIBA = libft/libft.a
+
 OBJS = \
-	debug.o\
-	\
 	fillit.o\
 	global_init.o\
 	piece_mask.o\
@@ -18,14 +20,19 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	gcc -o $@ $^ -I . libft.a
-
 %.o: %.c
-	gcc $(CFLAGS) -I . -c -o $@ $^
+	gcc $(CFLAGS) -c -o $@ $^
+
+$(NAME): $(OBJS)
+	make -C $(LIBRARY)
+	gcc -o $@ $^ $(LIBA) -I $(LIBRARY)
 
 clean:
 	rm -f $(OBJS)
+	make fclean -C $(LIBRARY)
+
 fclean: clean
 	rm -f $(NAME)
+	make fclean -C $(LIBRARY)
+
 re: clean all

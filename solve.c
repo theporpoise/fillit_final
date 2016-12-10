@@ -6,11 +6,11 @@
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 19:10:00 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/10 11:49:45 by mgould           ###   ########.fr       */
+/*   Updated: 2016/12/10 12:10:01 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fillit.h>
+#include "fillit.h"
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -55,7 +55,7 @@ static char		**init_solution(char **solution, int size)
 	return (solution);
 }
 
-static char		**solve_size()
+static char		**solve_size(void)
 {
 	char	**solution;
 
