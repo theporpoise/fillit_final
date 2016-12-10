@@ -5,9 +5,8 @@ OBJS = \
 	\
 	fillit.o\
 	global_init.o\
-	input_parse.o\
 	piece_mask.o\
-	startup.o
+	init_pieces_points.o
 
 
 CFLAGS = -Wall -Wextra -Werror

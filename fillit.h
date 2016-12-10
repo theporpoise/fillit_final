@@ -21,15 +21,14 @@
 int						*input_parse(int argc, char **argv);
 
 /*
-** startup.c
+** init_pieces_points.c
 */
-void					init_sides(void);
+void					init_pieces_points(void);
 
 /*
 ** piece_mask.c
 */
 _Bool					get_pp(int piece, int x, int y);
-_Bool					get_ps(int piece, int side, int x, int y);
 
 /*
 ** global_init.c
@@ -38,7 +37,8 @@ _Bool					get_ps(int piece, int side, int x, int y);
 */
 # define P_TYPE_CNT 19
 
-extern _Bool			g_piece_sides[P_TYPE_CNT][4][4][4];
+extern int				g_p_crds_x[P_TYPE_CNT][4];
+extern int				g_p_crds_y[P_TYPE_CNT][4];
 extern const _Bool		g_piece_types[P_TYPE_CNT][4][4];
 
 /*
@@ -46,6 +46,7 @@ extern const _Bool		g_piece_types[P_TYPE_CNT][4][4];
 */
 void					print_piece_of_type(int type);
 void					print_piece(const _Bool piece[4][4]);
-void					print_type_sides(int type);
+void					print_points(int piece);
+void					print_pieces_points(void);
 
 #endif

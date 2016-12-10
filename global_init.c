@@ -12,7 +12,8 @@
 
 #include <fillit.h>
 
-_Bool			g_piece_sides[P_TYPE_CNT][4][4][4];
+int				g_p_crds_x[P_TYPE_CNT][4];
+int				g_p_crds_y[P_TYPE_CNT][4];
 
 const _Bool		g_piece_types[P_TYPE_CNT][4][4] = {
 	{
