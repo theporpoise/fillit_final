@@ -6,7 +6,7 @@
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 20:34:36 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/09 20:34:38 by mburson          ###   ########.fr       */
+/*   Updated: 2016/12/10 11:29:29 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ char			**recursion_head(char **solution, int step)
 	int		y;
 	char	**new;
 
-	print_solution(solution);
+	//print_solution(solution);
 	if (g_input[step] == -1)
 		return (solution);
 	y = 0;

@@ -6,7 +6,7 @@
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/07 19:19:33 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/10 09:38:29 by mgould           ###   ########.fr       */
+/*   Updated: 2016/12/10 11:27:02 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,16 @@ int				main(int argc, char **argv)
 		print_error();
 		return (0);
 	}
+	/*
 	write(1, "\n", 1);
 	write(1, "input finished\n", 14);
 	write(1, "\n", 1);
 	write(1, "\n", 1);
+	*/
 	init_pieces_points();
+	/*
 	print_input();
+	*/
 	solution = solve();
 	print_map(solution);
 	return (0);

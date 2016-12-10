@@ -6,7 +6,7 @@
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 19:10:00 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/09 19:10:02 by mburson          ###   ########.fr       */
+/*   Updated: 2016/12/10 11:34:09 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ static	int		min_solution_size(int len)
 {
 	int	i;
 
-	i = 4;
+	i = 1;
 	while (len * 4 > i * i)
 		i++;
 	return (i);
@@ -96,6 +96,6 @@ char			**solve(void)
 	g_map_size = min_solution_size(cal_input_len());
 	while (!(solution = solve_size()))
 		g_map_size++;
-	print_solution(solution);
+	//print_solution(solution);
 	return (solution);
 }
