@@ -6,7 +6,7 @@
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 19:10:00 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/10 11:34:09 by mgould           ###   ########.fr       */
+/*   Updated: 2016/12/10 11:49:45 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,22 +61,11 @@ static char		**solve_size()
 
 	if (!(solution = malloc_solution_map(g_map_size)))
 	{
-		//todo: handle error
 		return (NULL);
 	}
 	init_solution(solution, g_map_size);
 	solution = recursion_head(solution, 0);
 	return (solution);
-}
-
-static	int		cal_input_len(void)
-{
-	int i;
-
-	i = 0;
-	while (g_input[i] != -1)
-		i++;
-	return (i);
 }
 
 static	int		min_solution_size(int len)
@@ -92,10 +81,13 @@ static	int		min_solution_size(int len)
 char			**solve(void)
 {
 	char	**solution;
+	int		input_len;
 
-	g_map_size = min_solution_size(cal_input_len());
+	input_len = 0;
+	while (g_input[input_len] != -1)
+		input_len++;
+	g_map_size = min_solution_size(input_len);
 	while (!(solution = solve_size()))
 		g_map_size++;
-	//print_solution(solution);
 	return (solution);
 }

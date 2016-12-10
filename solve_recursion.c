@@ -6,7 +6,7 @@
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 20:34:36 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/10 11:29:29 by mgould           ###   ########.fr       */
+/*   Updated: 2016/12/10 11:42:26 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ static char		**solution_dup(char **solution)
 
 	if (!(new = malloc_solution_map(g_map_size)))
 	{
-		//todo: handle error
 		return (NULL);
 	}
 	y = 0;
@@ -74,7 +73,6 @@ char			**recursion_head(char **solution, int step)
 	int		y;
 	char	**new;
 
-	//print_solution(solution);
 	if (g_input[step] == -1)
 		return (solution);
 	y = 0;
@@ -96,24 +94,3 @@ char			**recursion_head(char **solution, int step)
 	free(solution);
 	return (NULL);
 }
-/*
-char			**recursion_head(char **solution, int map_size, int step)
-{
-	if (g_map_size != 7)
-	{
-		free(solution);
-		return (NULL);
-	}
-	char **new;
-	new = solution_dup(solution, g_map_size);
-	free(solution);
-	if (does_fit(new, g_input[2], 3, 0))
-		add_piece(new, 2, 3, 0);
-	if (does_fit(new, g_input[step], 1, 0))
-		add_piece(new, step, 1, 0);
-	if (does_fit(new, g_input[1], 2, 1))
-		add_piece(new, 1, 2, 1);
-	return (new);
-
-}
-*/
