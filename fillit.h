@@ -32,6 +32,7 @@ void					init_pieces_points(void);
 ** piece_mask.c
 */
 _Bool					get_pp(int piece, int x, int y);
+char 					map_mask(char **map, int size, int x, int y);
 
 /*
 ** global_init.c
@@ -43,11 +44,18 @@ _Bool					get_pp(int piece, int x, int y);
 extern int				g_p_crds_x[P_TYPE_CNT][4];
 extern int				g_p_crds_y[P_TYPE_CNT][4];
 extern const _Bool		g_piece_types[P_TYPE_CNT][4][4];
+extern int				*input;
 
 /*
 ** solve.c
 */
-char					**solve(int *input);
+char					**solve(void);
+char					**malloc_solution_map(int size);
+
+/*
+** solve_recursion.c
+*/
+char					**recursion_head(char **solution, int size, int step);
 
 /*
 ** helper.c
@@ -61,7 +69,7 @@ void					print_piece_of_type(int type);
 void					print_piece(const _Bool piece[4][4]);
 void					print_points(int piece);
 void					print_pieces_points(void);
-void					print_input(int *input);
+void					print_input(void);
 void					print_solution_of_size(char **solution, int size);
 
 #endif

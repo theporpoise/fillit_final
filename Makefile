@@ -10,7 +10,8 @@ OBJS = \
 	g_minos.o\
 	input_parse.o\
 	solve.o\
-	helper.o
+	helper.o\
+	solve_recursion.o
 
 CFLAGS = -Wall -Wextra -Werror -g
 

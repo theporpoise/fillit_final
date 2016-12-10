@@ -20,7 +20,6 @@ static void		print_error(void)
 
 int				main(int argc, char **argv)
 {
-	int		*input;
 	char	**solution;
 	if (!(input = input_parse(argc, argv)))
 	{
@@ -33,7 +32,7 @@ int				main(int argc, char **argv)
 	write(1, "\n", 1);
 	init_pieces_points();
 	//print_pieces_points();
-	print_input(input);
-	solution = solve(input);
+	print_input();
+	solution = solve();
 	return (0);
 }

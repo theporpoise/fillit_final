@@ -23,3 +23,9 @@ _Bool	get_pp(int piece, int x, int y)
 	return (g_piece_types[piece][x][y]);
 }
 
+char map_mask(char **map, int size, int x, int y)
+{
+	if (x < size && y < size)
+		return (map[y][x]);
+	return ('Z');
+}

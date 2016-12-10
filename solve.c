@@ -15,11 +15,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-static char		**build_solution_map(int size)
+char			**malloc_solution_map(int size)
 {
 	char	**solution;
 	int		i;
-	int		j;
 
 	if (!(solution = (char**)malloc(sizeof(char*) * size)))
 		return (NULL);
@@ -32,28 +31,45 @@ static char		**build_solution_map(int size)
 			free(solution);
 			return (NULL);
 		}
-		j = 0;
-		while (j < size)
-		{
-			solution[i][j] = '.';
-			j++;
-		}
 		i++;
 	}
 	return (solution);
 }
 
-static char		**solve_size(int *input, int size)
+static char		**init_solution(char **solution, int size)
 {
-	char	**solution;
+	int		x;
+	int		y;
 
-	input[1]++; //todo: remove this line
-	solution = build_solution_map(size);
-	//solution = asldfhsahd(solution, size, input, step);
+	y = 0;
+	while (y < size)
+	{
+		x = 0;
+		while (x < size)
+		{
+			solution[y][x] = '.';
+			x++;
+		}
+		y++;
+	}
 	return (solution);
 }
 
-static	int		cal_input_len(int *input)
+static char		**solve_size(int size)
+{
+	char	**solution;
+
+	if (!(solution = malloc_solution_map(size)))
+	{
+		//todo: handle error
+		return (NULL);
+	}
+	init_solution(solution, size);
+	solution = recursion_head(solution, size, 0);
+	return (solution);
+}
+
+static	int		cal_input_len(void)
 {
 	int i;
 
@@ -73,13 +89,13 @@ static	int		min_solution_size(int len)
 	return (i);
 }
 
-char			**solve(int *input)
+char			**solve(void)
 {
 	char	**solution;
 	int		size;
 
-	size = min_solution_size(cal_input_len(input));
-	while (!(solution = solve_size(input, size)))
+	size = min_solution_size(cal_input_len());
+	while (!(solution = solve_size(size)))
 		size++;
 	print_solution_of_size(solution, size);
 	return (solution);

@@ -72,7 +72,7 @@ void	print_pieces_points(void)
 	}
 }
 
-void	print_input(int *input)
+void	print_input(void)
 {
 	int i;
 
@@ -109,5 +109,6 @@ void	print_solution_of_size(char **solution, int size)
 		printf("\n");
 		y++;
 	}
+	printf("\n");
 }
 
