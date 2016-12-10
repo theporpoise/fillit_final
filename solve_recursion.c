@@ -20,7 +20,8 @@ static _Bool	does_fit(char **map, int piece, int x, int y)
 	i = 0;
 	while (i < 4)
 	{
-		if (map_mask(map, g_map_size, x + g_p_crds_y[piece][i], y + g_p_crds_x[piece][i]) != '.')
+		if (map_mask(map, g_map_size, x + g_p_crds_y[piece][i],\
+				y + g_p_crds_x[piece][i]) != '.')
 			return (0);
 		i++;
 	}
@@ -33,10 +34,10 @@ static char		**solution_dup(char **solution)
 	int		x;
 	int		y;
 
-	if (!(new  = malloc_solution_map(g_map_size)))
+	if (!(new = malloc_solution_map(g_map_size)))
 	{
 		//todo: handle error
-		return(NULL);
+		return (NULL);
 	}
 	y = 0;
 	while (y < g_map_size)
@@ -61,7 +62,8 @@ static void		add_piece(char **solution, int step, int x, int y)
 	i = 0;
 	while (i < 4)
 	{
-		solution[y + g_p_crds_x[g_input[step]][i]][x + g_p_crds_y[g_input[step]][i]] = c;
+		solution[y + g_p_crds_x[g_input[step]][i]][x\
+			+ g_p_crds_y[g_input[step]][i]] = c;
 		i++;
 	}
 }
@@ -78,13 +80,12 @@ char			**recursion_head(char **solution, int step)
 	y = 0;
 	while (y < g_map_size)
 	{
-		x= 0;
+		x = 0;
 		while (x < g_map_size)
 		{
 			if (does_fit(solution, g_input[step], x, y))
 			{
-				new = solution_dup(solution);
-				add_piece(new, step, x, y);
+				add_piece((new = solution_dup(solution)), step, x, y);
 				if ((new = recursion_head(new, step + 1)))
 					return (new);
 			}
