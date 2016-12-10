@@ -96,14 +96,14 @@ void	print_solution(char **solution)
 		return ;
 	}
 	y = 0;
-	while (y < map_size)
+	while (y < g_map_size)
 	{
 		x = 0;
-		while (x < map_size)
+		while (x < g_map_size)
 		{
 			printf("%c", solution[y][x]);
 			x++;
-			if (x < map_size)
+			if (x < g_map_size)
 				printf(" ");
 		}
 		printf("\n");

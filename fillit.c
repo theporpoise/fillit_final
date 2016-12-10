@@ -29,10 +29,10 @@ static void		print_map(char **solution)
 		return ;
 	}
 	y = 0;
-	while (y < map_size)
+	while (y < g_map_size)
 	{
 		x = 0;
-		while (x < map_size)
+		while (x < g_map_size)
 		{
 			write(1, &(solution[y][x]), 1);
 			x++;

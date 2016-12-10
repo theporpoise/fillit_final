@@ -13,7 +13,7 @@
 #ifndef FILLIT_H
 # define FILLIT_H
 
-#include <string.h>
+# include <string.h>
 
 # define MAX_INPUT_SIZE 26
 
@@ -32,7 +32,7 @@ void					init_pieces_points(void);
 ** piece_mask.c
 */
 _Bool					get_pp(int piece, int x, int y);
-char 					map_mask(char **map, int size, int x, int y);
+char					map_mask(char **map, int size, int x, int y);
 
 /*
 ** global_init.c
@@ -45,7 +45,7 @@ extern int				g_p_crds_x[P_TYPE_CNT][4];
 extern int				g_p_crds_y[P_TYPE_CNT][4];
 extern const _Bool		g_piece_types[P_TYPE_CNT][4][4];
 extern int				*input;
-extern int				map_size;
+extern int				g_map_size;
 
 /*
 ** solve.c

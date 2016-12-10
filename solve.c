@@ -59,12 +59,12 @@ static char		**solve_size()
 {
 	char	**solution;
 
-	if (!(solution = malloc_solution_map(map_size)))
+	if (!(solution = malloc_solution_map(g_map_size)))
 	{
 		//todo: handle error
 		return (NULL);
 	}
-	init_solution(solution, map_size);
+	init_solution(solution, g_map_size);
 	solution = recursion_head(solution, 0);
 	return (solution);
 }
@@ -93,9 +93,9 @@ char			**solve(void)
 {
 	char	**solution;
 
-	map_size = min_solution_size(cal_input_len());
+	g_map_size = min_solution_size(cal_input_len());
 	while (!(solution = solve_size()))
-		map_size++;
+		g_map_size++;
 	print_solution(solution);
 	return (solution);
 }

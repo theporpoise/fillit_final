@@ -15,7 +15,7 @@
 int				g_p_crds_x[P_TYPE_CNT][4];
 int				g_p_crds_y[P_TYPE_CNT][4];
 int				*input;
-int				map_size;
+int				g_map_size;
 
 const _Bool		g_piece_types[P_TYPE_CNT][4][4] = {
 	{
