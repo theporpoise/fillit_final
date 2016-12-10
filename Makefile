@@ -11,7 +11,8 @@ OBJS = \
 	input_parse.o\
 	solve.o\
 	helper.o\
-	solve_recursion.o
+	solve_recursion.o\
+	string_not_val.o
 
 CFLAGS = -Wall -Wextra -Werror -g
 

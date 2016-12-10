@@ -6,7 +6,7 @@
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/07 19:33:26 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/07 19:56:42 by mburson          ###   ########.fr       */
+/*   Updated: 2016/12/10 10:00:14 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 */
 extern const char		*g_minos[];
 int						*input_parse(int argc, char **argv);
+int						string_not_val(char *string, int *input);
 
 /*
 ** init_pieces_points.c

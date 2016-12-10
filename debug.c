@@ -48,7 +48,7 @@ void	print_piece(const _Bool piece[4][4])
 void	print_points(int piece)
 {
 	int i;
-	
+
 	printf("   %d points:\n", piece);
 	i = 0;
 	while (i < 4)
@@ -80,9 +80,10 @@ void	print_input(void)
 	i = 0;
 	while (i < MAX_INPUT_SIZE)
 	{
-		printf("%d\n", g_input[i]);
+		printf("%d,  ", g_input[i]);
 		i++;
 	}
+	printf("\n\n");
 }
 
 void	print_solution(char **solution)
