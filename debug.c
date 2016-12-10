@@ -85,7 +85,7 @@ void	print_input(void)
 	}
 }
 
-void	print_solution_of_size(char **solution, int size)
+void	print_solution(char **solution)
 {
 	int		x;
 	int		y;
@@ -96,14 +96,14 @@ void	print_solution_of_size(char **solution, int size)
 		return ;
 	}
 	y = 0;
-	while (y < size)
+	while (y < map_size)
 	{
 		x = 0;
-		while (x < size)
+		while (x < map_size)
 		{
 			printf("%c", solution[y][x]);
 			x++;
-			if (x < size)
+			if (x < map_size)
 				printf(" ");
 		}
 		printf("\n");
@@ -111,4 +111,3 @@ void	print_solution_of_size(char **solution, int size)
 	}
 	printf("\n");
 }
-

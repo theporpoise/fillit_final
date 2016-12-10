@@ -45,6 +45,7 @@ extern int				g_p_crds_x[P_TYPE_CNT][4];
 extern int				g_p_crds_y[P_TYPE_CNT][4];
 extern const _Bool		g_piece_types[P_TYPE_CNT][4][4];
 extern int				*input;
+extern int				map_size;
 
 /*
 ** solve.c
@@ -55,7 +56,7 @@ char					**malloc_solution_map(int size);
 /*
 ** solve_recursion.c
 */
-char					**recursion_head(char **solution, int size, int step);
+char					**recursion_head(char **solution, int step);
 
 /*
 ** helper.c
@@ -70,6 +71,6 @@ void					print_piece(const _Bool piece[4][4]);
 void					print_points(int piece);
 void					print_pieces_points(void);
 void					print_input(void);
-void					print_solution_of_size(char **solution, int size);
+void					print_solution(char **solution);
 
 #endif

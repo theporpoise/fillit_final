@@ -55,17 +55,17 @@ static char		**init_solution(char **solution, int size)
 	return (solution);
 }
 
-static char		**solve_size(int size)
+static char		**solve_size()
 {
 	char	**solution;
 
-	if (!(solution = malloc_solution_map(size)))
+	if (!(solution = malloc_solution_map(map_size)))
 	{
 		//todo: handle error
 		return (NULL);
 	}
-	init_solution(solution, size);
-	solution = recursion_head(solution, size, 0);
+	init_solution(solution, map_size);
+	solution = recursion_head(solution, 0);
 	return (solution);
 }
 
@@ -92,11 +92,10 @@ static	int		min_solution_size(int len)
 char			**solve(void)
 {
 	char	**solution;
-	int		size;
 
-	size = min_solution_size(cal_input_len());
-	while (!(solution = solve_size(size)))
-		size++;
-	print_solution_of_size(solution, size);
+	map_size = min_solution_size(cal_input_len());
+	while (!(solution = solve_size()))
+		map_size++;
+	print_solution(solution);
 	return (solution);
 }
