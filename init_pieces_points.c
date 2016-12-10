@@ -1,39 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.c                                           :+:      :+:    :+:   */
+/*   startup.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/07 19:19:33 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/07 19:56:37 by mburson          ###   ########.fr       */
+/*   Created: 2016/12/08 18:36:19 by mburson           #+#    #+#             */
+/*   Updated: 2016/12/08 18:36:21 by mburson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fillit.h>
-#include <unistd.h>
 
-static void		print_error(void)
+static void		init_piece(int piece)
 {
-	write(1, "error\n", 6);
+	int		p;
+	int		x;
+	int		y;
+
+	p = 0;
+	x = 0;
+	while (x < 4)
+	{
+		y = 0;
+		while (y < 4)
+		{
+			if (g_piece_types[piece][x][y])
+			{
+				g_p_crds_x[piece][p] = x;
+				g_p_crds_y[piece][p] = y;
+				p++;
+			}
+			y++;
+		}
+		x++;
+	}
 }
 
-int				main(int argc, char **argv)
+void			init_pieces_points(void)
 {
-	int		*input;
-	char	**solution;
-	if (!(input = input_parse(argc, argv)))
+	int		i;
+
+	i = 0;
+	while (i < P_TYPE_CNT)
 	{
-		print_error();
-		return (0);
+		init_piece(i);
+		i++;
 	}
-	write(1, "\n", 1);
-	write(1, "input finished\n", 14);
-	write(1, "\n", 1);
-	write(1, "\n", 1);
-	init_pieces_points();
-	//print_pieces_points();
-	print_input(input);
-	solution = solve(input);
-	return (0);
 }

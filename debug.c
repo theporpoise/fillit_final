@@ -72,3 +72,42 @@ void	print_pieces_points(void)
 	}
 }
 
+void	print_input(int *input)
+{
+	int i;
+
+	printf("   input:\n");
+	i = 0;
+	while (i < MAX_INPUT_SIZE)
+	{
+		printf("%d\n", input[i]);
+		i++;
+	}
+}
+
+void	print_solution_of_size(char **solution, int size)
+{
+	int		x;
+	int		y;
+
+	if (!solution)
+	{
+		printf("solution is null\n");
+		return ;
+	}
+	y = 0;
+	while (y < size)
+	{
+		x = 0;
+		while (x < size)
+		{
+			printf("%c", solution[y][x]);
+			x++;
+			if (x < size)
+				printf(" ");
+		}
+		printf("\n");
+		y++;
+	}
+}
+

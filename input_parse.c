@@ -18,7 +18,8 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/uio.h>
-#include "libft.h" //compile with libft.a
+#include <libft.h> //compile with libft.a
+#include <fillit.h>
 
 //string validation
 //check if valid, % 20 == (/ 20 -1), 5 chars per t line, 1 char otherwise

@@ -13,11 +13,14 @@
 #ifndef FILLIT_H
 # define FILLIT_H
 
+#include <string.h>
+
 # define MAX_INPUT_SIZE 26
 
 /*
 ** matts stuff
 */
+extern const char		*g_minos[];
 int						*input_parse(int argc, char **argv);
 
 /*
@@ -42,11 +45,23 @@ extern int				g_p_crds_y[P_TYPE_CNT][4];
 extern const _Bool		g_piece_types[P_TYPE_CNT][4][4];
 
 /*
+** solve.c
+*/
+char					**solve(int *input);
+
+/*
+** helper.c
+*/
+void					free_n_pointers(void *ptr, size_t n, size_t size);
+
+/*
 ** debug.c
 */
 void					print_piece_of_type(int type);
 void					print_piece(const _Bool piece[4][4]);
 void					print_points(int piece);
 void					print_pieces_points(void);
+void					print_input(int *input);
+void					print_solution_of_size(char **solution, int size);
 
 #endif

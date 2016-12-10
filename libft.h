@@ -14,7 +14,6 @@
 # define LIBFT_H
 # include <string.h>
 
-extern const char	*g_minos[];
 typedef struct		s_list
 {
 	void			*content;
