@@ -61,7 +61,7 @@ static void		add_piece(char **solution, int step, int x, int y)
 	i = 0;
 	while (i < 4)
 	{
-		solution[y + g_p_crds_x[input[step]][i]][x + g_p_crds_y[input[step]][i]] = c;
+		solution[y + g_p_crds_x[g_input[step]][i]][x + g_p_crds_y[g_input[step]][i]] = c;
 		i++;
 	}
 }
@@ -73,7 +73,7 @@ char			**recursion_head(char **solution, int step)
 	char	**new;
 
 	print_solution(solution);
-	if (input[step] == -1)
+	if (g_input[step] == -1)
 		return (solution);
 	y = 0;
 	while (y < g_map_size)
@@ -81,7 +81,7 @@ char			**recursion_head(char **solution, int step)
 		x= 0;
 		while (x < g_map_size)
 		{
-			if (does_fit(solution, input[step], x, y))
+			if (does_fit(solution, g_input[step], x, y))
 			{
 				new = solution_dup(solution);
 				add_piece(new, step, x, y);
@@ -96,7 +96,7 @@ char			**recursion_head(char **solution, int step)
 	return (NULL);
 }
 /*
-char			**recursion_head(char **solution, int g_map_size, int step)
+char			**recursion_head(char **solution, int map_size, int step)
 {
 	if (g_map_size != 7)
 	{
@@ -106,11 +106,11 @@ char			**recursion_head(char **solution, int g_map_size, int step)
 	char **new;
 	new = solution_dup(solution, g_map_size);
 	free(solution);
-	if (does_fit(new, input[2], 3, 0))
+	if (does_fit(new, g_input[2], 3, 0))
 		add_piece(new, 2, 3, 0);
-	if (does_fit(new, input[step], 1, 0))
+	if (does_fit(new, g_input[step], 1, 0))
 		add_piece(new, step, 1, 0);
-	if (does_fit(new, input[1], 2, 1))
+	if (does_fit(new, g_input[1], 2, 1))
 		add_piece(new, 1, 2, 1);
 	return (new);
 

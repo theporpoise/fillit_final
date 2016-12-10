@@ -80,7 +80,7 @@ void	print_input(void)
 	i = 0;
 	while (i < MAX_INPUT_SIZE)
 	{
-		printf("%d\n", input[i]);
+		printf("%d\n", g_input[i]);
 		i++;
 	}
 }

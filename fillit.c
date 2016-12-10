@@ -46,7 +46,7 @@ int				main(int argc, char **argv)
 {
 	char	**solution;
 
-	if (!(input = input_parse(argc, argv)))
+	if (!(g_input = input_parse(argc, argv)))
 	{
 		print_error();
 		return (0);

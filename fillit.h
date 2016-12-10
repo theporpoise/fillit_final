@@ -44,7 +44,7 @@ char					map_mask(char **map, int size, int x, int y);
 extern int				g_p_crds_x[P_TYPE_CNT][4];
 extern int				g_p_crds_y[P_TYPE_CNT][4];
 extern const _Bool		g_piece_types[P_TYPE_CNT][4][4];
-extern int				*input;
+extern int				*g_input;
 extern int				g_map_size;
 
 /*

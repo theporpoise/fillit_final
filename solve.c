@@ -74,7 +74,7 @@ static	int		cal_input_len(void)
 	int i;
 
 	i = 0;
-	while (input[i] != -1)
+	while (g_input[i] != -1)
 		i++;
 	return (i);
 }
