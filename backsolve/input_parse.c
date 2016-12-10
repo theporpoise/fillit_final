@@ -6,7 +6,7 @@
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 08:01:10 by mgould            #+#    #+#             */
-/*   Updated: 2016/12/09 17:55:22 by mgould           ###   ########.fr       */
+/*   Updated: 2016/12/09 17:56:41 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,7 +197,7 @@ int *adjust_num(int *input)
 	return (input);
 }
 
-int	main(int ac, char **av)
+int	*input_parse(int ac, char **av)
 {
 	char *string;
 	int *input;
@@ -238,7 +238,7 @@ int	main(int ac, char **av)
 	}
 	input = adjust_num(input);
 
-
+	return (input);
 
 }
 
