@@ -45,18 +45,30 @@ void	print_piece(const _Bool piece[4][4])
 	}
 }
 
-void	print_type_sides(int type)
+void	print_points(int piece)
 {
-	printf("\n");
-	printf("   sides for type: %d\n", type);
-	printf("\n");
-	print_piece(g_piece_sides[type][0]);
-	printf("\n");
-	print_piece(g_piece_sides[type][1]);
-	printf("\n");
-	print_piece(g_piece_sides[type][2]);
-	printf("\n");
-	print_piece(g_piece_sides[type][3]);
-	printf("\n");
-	printf("\n");
+	int i;
+	
+	printf("   %d points:\n", piece);
+	i = 0;
+	while (i < 4)
+	{
+		printf("(%d, %d)\n", g_p_crds_x[piece][i], g_p_crds_y[piece][i]);
+		i++;
+	}
 }
+
+
+void	print_pieces_points(void)
+{
+	int i;
+
+	i = 0;
+	while (i < P_TYPE_CNT)
+	{
+		print_points(i);
+		printf("\n");
+		i++;
+	}
+}
+

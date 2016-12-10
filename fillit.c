@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <fillit.h>
+#include <unistd.h>
 
 static void		print_error(void)
 {
@@ -20,14 +21,13 @@ static void		print_error(void)
 int				main(int argc, char **argv)
 {
 	int		*input;
-	int		open_msg;
-
-	if (!(input = input_parse(argc, argv));
+	if (!(input = input_parse(argc, argv)))
 	{
-		print_print();
+		print_error();
 		return (0);
 	}
-	init_piece_points();
-	print_type_sides(1);
+	print_error();
+	init_pieces_points();
+	print_pieces_points();
 	return (0);
 }
