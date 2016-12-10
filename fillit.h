@@ -13,10 +13,12 @@
 #ifndef FILLIT_H
 # define FILLIT_H
 
+# define MAX_INPUT_SIZE 26
+
 /*
-** input_parse.c
+** matts stuff
 */
-void					input_parse(int *pieces, int open_msg);
+int						*input_parse(int argc, char **argv);
 
 /*
 ** startup.c

@@ -11,27 +11,23 @@
 /* ************************************************************************** */
 
 #include <fillit.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
 
-void	print_error(void)
+static void		print_error(void)
 {
 	write(1, "error\n", 6);
 }
 
-int		main(int argc, char **argv)
+int				main(int argc, char **argv)
 {
-	int		input[26];
+	int		*input;
 	int		open_msg;
 
-	if (argc != 2 || (!(open_msg = open(argv[1], O_RDONLY))))
+	if (!(input = input_parse(argc, argv));
 	{
-		print_error();
+		print_print();
 		return (0);
 	}
-	init_sides();
-	input_parse(input, open_msg);
+	init_piece_points();
 	print_type_sides(1);
 	return (0);
 }
