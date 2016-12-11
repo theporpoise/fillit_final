@@ -36,7 +36,8 @@ int	good_len(int len)
 {
 	if (len == 20)
 		return (1);
-	else if ((((len - 20) % 21) == 0) && (len <= 545))
+	else if ((((len - 20) % 21) == 0) &&\
+		(len <= (((MAX_INPUT_SIZE - 1) * 21) + 20)))
 		return (1);
 	else
 		return (0);

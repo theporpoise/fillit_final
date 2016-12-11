@@ -77,9 +77,9 @@ int		*input_parse(int ac, char **av)
 	int		*input;
 	int		i;
 
-	input = (int *)malloc(sizeof(int) * 27);
+	input = (int *)malloc(sizeof(int) * (MAX_INPUT_SIZE + 1));
 	i = 0;
-	while (i < 27)
+	while (i < (MAX_INPUT_SIZE + 1))
 	{
 		input[i] = -1;
 		i++;

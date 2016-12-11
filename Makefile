@@ -1,6 +1,6 @@
 NAME = fillit
 
-LIBA = libft/libft.a
+LIBA = ./libft/libft.a
 
 OBJS = \
 	fillit.o\
@@ -19,10 +19,12 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 %.o: %.c
-	gcc $(CFLAGS) -c -o $@ $^ -I . -I libft
+	gcc $(CFLAGS) -c -I . -I libft -o $@ $<
 
 $(NAME): $(OBJS) $(LIBA)
 	gcc -o $@ $^
+
+$(OBJS): fillit.h
 
 $(LIBA):
 	cd libft && $(MAKE)
