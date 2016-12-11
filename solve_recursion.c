@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "fillit.h"
+#include <fillit.h>
 
 static _Bool	does_fit(char **map, int piece, int x, int y)
 {

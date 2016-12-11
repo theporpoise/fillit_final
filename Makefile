@@ -1,7 +1,5 @@
 NAME = fillit
 
-LIBRARY = libft
-
 LIBA = libft/libft.a
 
 OBJS = \
@@ -16,23 +14,24 @@ OBJS = \
 	solve_recursion.o\
 	string_not_val.o
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 %.o: %.c
-	gcc $(CFLAGS) -c -o $@ $^
+	gcc $(CFLAGS) -c -o $@ $^ -I . -I libft
 
-$(NAME): $(OBJS)
-	make -C $(LIBRARY)
-	gcc -o $@ $^ $(LIBA) -I $(LIBRARY)
+$(NAME): $(OBJS) $(LIBA)
+	gcc -o $@ $^
+
+$(LIBA):
+	cd libft && $(MAKE)
 
 clean:
 	rm -f $(OBJS)
-	make fclean -C $(LIBRARY)
+	cd libft && $(MAKE) fclean
 
 fclean: clean
 	rm -f $(NAME)
-	make fclean -C $(LIBRARY)
 
 re: clean all

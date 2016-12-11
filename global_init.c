@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include <fillit.h>
 
 int				g_p_crds_x[P_TYPE_CNT][4];
 int				g_p_crds_y[P_TYPE_CNT][4];

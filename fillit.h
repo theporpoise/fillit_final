@@ -14,7 +14,6 @@
 # define FILLIT_H
 
 # include <string.h>
-# include "./libft/libft.h"
 
 # define MAX_INPUT_SIZE 26
 

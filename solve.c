@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include <fillit.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
